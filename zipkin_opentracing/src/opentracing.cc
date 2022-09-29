@@ -125,11 +125,6 @@ public:
     return span_context_.id() != 0 && !span_context_.trace_id().empty();
   }
 
-  std::unique_ptr<SpanContext> Clone() const noexcept
-  {
-    return nullptr;
-  }
-
 private:
   zipkin::SpanContext span_context_;
   mutable std::mutex baggage_mutex_;
